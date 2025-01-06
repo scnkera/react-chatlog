@@ -9,9 +9,11 @@ const App = () => {
   const toggleLike = (id) => {
     const updatedMessages = chatMessages.map((message) => {
       if (message.id === id) {
-        message.liked = !message.liked;
+        // message.liked = !message.liked;
+        return {...message, liked:!message.liked};
+      } else {
+        return message;
       }
-      return message;
     });
     setChatMessages(updatedMessages);
   };
